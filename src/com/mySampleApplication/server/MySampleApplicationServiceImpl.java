@@ -1,5 +1,6 @@
-package com.mySampleApplication.server.rest;
+package com.mySampleApplication.server;
 
+import com.mySampleApplication.shared.Message;
 import com.mySampleApplication.shared.MySampleApplicationService;
 
 import javax.ws.rs.QueryParam;
@@ -7,8 +8,8 @@ import javax.ws.rs.QueryParam;
 public class MySampleApplicationServiceImpl implements MySampleApplicationService {
 
 	@Override
-    public String getMessage(String msg) {
-        return "Client said: \"" + msg + "\"<br>Server answered: \"Hi!\"";
+    public Message getMessage(String msg) {
+        return new Message("Client said: \"" + msg + "\"<br>Server answered: \"Hi!\"");
     }
 
 	@Override

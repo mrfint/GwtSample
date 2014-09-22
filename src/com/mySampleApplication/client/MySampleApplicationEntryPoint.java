@@ -4,6 +4,7 @@ import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.user.client.ui.*;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.event.dom.client.ClickEvent;
+import com.mySampleApplication.shared.Message;
 import com.mySampleApplication.shared.MySampleApplicationService;
 import org.jboss.errai.common.client.api.RemoteCallback;
 import org.jboss.errai.enterprise.client.jaxrs.api.RestClient;
@@ -25,10 +26,10 @@ public class MySampleApplicationEntryPoint implements EntryPoint {
 				if (label.getText().equals("")) {
 					RestClient.setJacksonMarshallingActive(true);
 					RestClient.setApplicationRoot("rest/");
-					RestClient.create(MySampleApplicationService.class, new RemoteCallback<String>() {
+					RestClient.create(MySampleApplicationService.class, new RemoteCallback<Message>() {
 						@Override
-						public void callback(String result) {
-							label.getElement().setInnerHTML(result);
+						public void callback(Message message) {
+							label.getElement().setInnerHTML(message.getMsg());
 						}
 					}).getMessage("Hello, World!");
 				} else {

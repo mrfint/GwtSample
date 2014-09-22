@@ -4,9 +4,17 @@ import org.jboss.errai.common.client.api.annotations.Portable;
 
 @Portable
 public class Message {
-	String msg;
 
-	public String getMsg() {
+    String msg;
+
+    public Message() {
+    }
+
+    public Message(String s) {
+        msg = s;
+    }
+
+    public String getMsg() {
 		return msg;
 	}
 
