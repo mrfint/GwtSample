@@ -7,13 +7,16 @@
 
 
     <servlet>
-        <servlet-name>com.mySampleApplication.MySampleApplication MySampleApplicationService</servlet-name>
-        <servlet-class>com.mySampleApplication.server.MySampleApplicationServiceImpl</servlet-class>
+        <servlet-name>RestBackend</servlet-name>
+        <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
+        <init-param>
+            <param-name>javax.ws.rs.Application</param-name>
+            <param-value>com.mySampleApplication.server.rest.RestApplication</param-value>
+        </init-param>
     </servlet>
-
     <servlet-mapping>
-        <servlet-name>com.mySampleApplication.MySampleApplication MySampleApplicationService</servlet-name>
-        <url-pattern>/MySampleApplication/MySampleApplicationService</url-pattern>
+        <servlet-name>RestBackend</servlet-name>
+        <url-pattern>/rest/*</url-pattern>
     </servlet-mapping>
 
 </web-app>
