@@ -1,3 +1,3 @@
-                                        Errai JAX-RS sample application
+                                Errai JAX-RS sample application
 
-                    Simple example for Errai Rest application with CacheIntercepror
+          Simple example for Errai Rest application with CacheIntercepror
