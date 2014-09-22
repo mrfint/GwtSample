@@ -2,13 +2,19 @@
         "http://google-web-toolkit.googlecode.com/svn/releases/2.0/distro-source/core/src/gwt-module.dtd">
 <module rename-to="MySampleApplication">
 
+    <source path="client"/>
+    <source path="shared"/>
+    <source path='server'/>
+
+    <public path="export"/>
+
     <!-- Inherit the core Web Toolkit stuff.                  -->
     <inherits name='com.google.gwt.user.User'/>
 
     <!-- Specify the app entry point class.                   -->
-    <entry-point class='com.mySampleApplication.client.MySampleApplication'/>
+    <entry-point class='com.mySampleApplication.client.MySampleApplicationEntryPoint'/>
 
-    <!-- Specify the app servlets.                   -->
-    <servlet path='/MySampleApplicationService' class='com.mySampleApplication.server.MySampleApplicationServiceImpl'/>
+    <!-- Errai Jaxrs -->
+    <inherits name="org.jboss.errai.enterprise.Jaxrs"/>
 
 </module>
